@@ -1,0 +1,261 @@
+:root {
+  --page-bg: #fefef9;
+  --panel: #b1ac36;
+  --table-bg: #bdbc93;
+  --border: #9b9b9a;
+  --text: #343430;
+  --muted: #717164;
+  --link: #231282;
+  --visited: #8d2450;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--page-bg);
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--visited);
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.site-shell {
+  display: grid;
+  grid-template-columns: minmax(230px, 20%) 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  border-right: 4px ridge var(--border);
+  padding: 18px 14px;
+  overflow-wrap: anywhere;
+}
+
+.sidebar h2 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 16px;
+  text-align: center;
+}
+
+.sidebar section + section {
+  margin-top: 26px;
+}
+
+.sidebar p {
+  margin: 0 0 12px;
+  text-align: justify;
+}
+
+.notice-box {
+  border: 2px solid var(--border);
+  background: #fffdf0;
+  padding: 12px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.content {
+  padding: 24px 24px 48px;
+}
+
+.journal-header {
+  display: grid;
+  grid-template-columns: minmax(210px, 280px) minmax(300px, 520px);
+  gap: 34px;
+  align-items: start;
+  max-width: 940px;
+}
+
+.cover {
+  margin: 0;
+  text-align: center;
+}
+
+.cover img {
+  width: min(100%, 260px);
+  height: auto;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.journal-actions {
+  max-width: 420px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.issn {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.panel-link {
+  display: block;
+  margin: 0 0 12px;
+  padding: 13px 16px;
+  color: #fff;
+  background: var(--panel);
+  border: 2px solid var(--border);
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.panel-link:visited {
+  color: #fff;
+}
+
+.doi {
+  margin: 30px 0 10px;
+  color: #0f0f0e;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.pending-note {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.contact {
+  margin: 0;
+  font-style: italic;
+}
+
+.toc-heading {
+  width: min(680px, 100%);
+  margin: 64px 0 10px;
+}
+
+.toc-heading h1 {
+  margin: 0;
+  padding-bottom: 18px;
+  color: var(--muted);
+  border-bottom: 2px solid #dad8d9;
+  font-size: 22px;
+}
+
+.issue-table {
+  width: min(980px, 100%);
+  margin: 0 0 28px;
+  border: 4px outset var(--border);
+  border-spacing: 2px;
+}
+
+.issue-table th,
+.issue-table td {
+  min-width: 96px;
+  padding: 10px 12px;
+  border: 2px solid var(--border);
+  font-size: 16px;
+  text-align: center;
+}
+
+.issue-table th {
+  width: 28%;
+  color: var(--muted);
+  background: var(--table-bg);
+}
+
+.article-entry {
+  max-width: 900px;
+  margin: 0 0 34px;
+  padding: 22px 0;
+  border-top: 1px solid #dad8d9;
+  border-bottom: 1px solid #dad8d9;
+}
+
+.article-entry h2 {
+  margin: 0 0 10px;
+  color: #111;
+  font-size: 23px;
+  line-height: 1.25;
+}
+
+.article-label {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.article-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin: 14px 0 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 760px) {
+  .site-shell {
+    display: block;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 4px ridge var(--border);
+  }
+
+  .content {
+    padding: 18px 14px 32px;
+  }
+
+  .journal-header {
+    display: block;
+  }
+
+  .journal-actions {
+    max-width: none;
+    margin-top: 18px;
+  }
+
+  .issn {
+    text-align: center;
+  }
+
+  .toc-heading {
+    margin-top: 40px;
+  }
+
+  .issue-table th,
+  .issue-table td {
+    min-width: 0;
+    padding: 8px 6px;
+    font-size: 14px;
+  }
+
+  .article-links {
+    display: block;
+  }
+
+  .article-links li + li {
+    margin-top: 8px;
+  }
+
+}
