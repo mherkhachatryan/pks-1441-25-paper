@@ -18,8 +18,9 @@ body {
   color: var(--text);
   background: var(--page-bg);
   font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.35;
+  font-size: 14px;
+  line-height: 1.32;
+  overflow: hidden;
 }
 
 a {
@@ -35,26 +36,29 @@ a:focus {
 
 .frame-shell {
   display: grid;
-  grid-template-columns: clamp(260px, 20vw, 420px) minmax(0, 1fr);
-  min-height: 100vh;
+  grid-template-columns: 20% 80%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .editorial-frame {
   min-width: 0;
-  padding: 16px 14px;
+  height: 100vh;
+  padding: 10px 9px 18px;
   border-right: 4px ridge var(--border);
   background: var(--page-bg);
-  font-size: 18px;
+  overflow-y: auto;
+  font-size: 14px;
   text-align: justify;
 }
 
 .editorial-frame p {
-  margin: 0 0 16px;
+  margin: 0 0 12px;
 }
 
 .editorial-frame h2 {
-  margin: 28px 0 18px;
-  font-size: 18px;
+  margin: 22px 0 16px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -64,19 +68,20 @@ a:focus {
 
 .unofficial-note {
   display: inline-block;
-  margin-bottom: 18px;
-  padding: 5px 8px;
+  margin: 18px 0 4px;
+  padding: 4px 7px;
   border: 2px solid var(--border);
   color: var(--muted);
   background: var(--table-bg);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   text-align: center;
 }
 
 .main-frame {
-  padding: 0 22px 44px;
-  overflow-x: auto;
+  height: 100vh;
+  padding: 0 0 34px;
+  overflow: auto;
 }
 
 .hero-table {
@@ -85,8 +90,8 @@ a:focus {
   align-items: start;
   width: 80%;
   min-width: 820px;
-  min-height: 440px;
-  padding-top: 12px;
+  min-height: 310px;
+  padding-top: 0;
 }
 
 .cover-cell {
@@ -106,15 +111,15 @@ a:focus {
 .issn {
   margin: 12px 0 14px;
   color: var(--border);
-  font-size: 34px;
+  font-size: 28px;
   text-align: right;
 }
 
 .author-panel {
-  width: 68%;
+  width: 64%;
   min-width: 430px;
-  margin: 0 auto 26px;
-  padding: 8px 22px 30px;
+  margin: 0 auto 24px;
+  padding: 6px 22px 30px;
   background: var(--panel);
   color: #fff;
 }
@@ -122,7 +127,7 @@ a:focus {
 .author-panel a {
   display: block;
   color: #fff;
-  font-size: 21px;
+  font-size: 17px;
   font-weight: normal;
 }
 
@@ -161,7 +166,7 @@ a:focus {
   padding: 2px 12px;
   color: #fff;
   background: var(--panel);
-  font-size: 24px;
+  font-size: 20px;
   font-family: Georgia, "Times New Roman", serif;
   letter-spacing: 0;
   box-shadow: 5px 6px 0 rgba(177, 172, 54, 0.45);
@@ -172,15 +177,15 @@ a:focus {
 }
 
 .journal-doi {
-  margin: 44px 0 16px;
+  margin: 38px 0 14px;
   color: #111;
-  font-size: 25px;
+  font-size: 21px;
   font-weight: bold;
 }
 
 .mail {
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
   font-style: italic;
   font-weight: bold;
 }
@@ -192,13 +197,13 @@ a:focus {
 .contents-heading {
   width: 55%;
   min-width: 560px;
-  margin: 50px 0 34px 20px;
+  margin: 56px 0 28px 20px;
 }
 
 .contents-heading h1 {
   margin: 0 0 34px;
   color: var(--muted);
-  font-size: 26px;
+  font-size: 18px;
 }
 
 .volume-table {
@@ -210,9 +215,9 @@ a:focus {
 }
 
 .volume-table td {
-  height: 36px;
+  height: 30px;
   border: 2px solid var(--border);
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -239,6 +244,7 @@ a:focus {
 .issue-page,
 .publication-page {
   background: #fff;
+  overflow: auto;
 }
 
 .issue-wrap {
@@ -339,18 +345,28 @@ a:focus {
 }
 
 @media (max-width: 920px) {
+  body {
+    overflow: auto;
+  }
+
   .frame-shell {
     display: block;
+    height: auto;
+    overflow: visible;
   }
 
   .editorial-frame {
+    height: auto;
     min-width: 0;
     border-right: 0;
     border-bottom: 4px ridge var(--border);
+    overflow: visible;
   }
 
   .main-frame {
+    height: auto;
     padding: 0 12px 32px;
+    overflow: visible;
   }
 
   .hero-table {
