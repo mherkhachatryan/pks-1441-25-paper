@@ -162,18 +162,16 @@ a:focus {
 
 .image-button {
   display: inline-block;
-  min-width: 200px;
-  padding: 2px 12px;
-  color: #fff;
-  background: var(--panel);
-  font-size: 20px;
-  font-family: Georgia, "Times New Roman", serif;
-  letter-spacing: 0;
-  box-shadow: 5px 6px 0 rgba(177, 172, 54, 0.45);
+  width: 200px;
+  height: 30px;
+  line-height: 0;
 }
 
-.image-button:visited {
-  color: #fff;
+.image-button img {
+  display: block;
+  width: 200px;
+  height: 30px;
+  border: 0;
 }
 
 .journal-doi {
